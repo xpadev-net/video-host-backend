@@ -6,13 +6,12 @@ if (in_array($_SERVER['HTTP_ORIGIN'], ALLOWED_DOMAIN)) {
     header('Access-Control-Allow-Credentials: true');
     header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
 }
+$data=$pdo->execute("SELECT `path` FROM `video_list` WHERE `url` = :url",array("url"=>$_GET['q']));
 if (empty($data)) {
     header("Content-Type: application/json; charset=utf-8");
     echo '{"status":"fail"}';
   exit;
 }
-ini_set('display_errors', "On");
-$data=$pdo->execute("SELECT `path` FROM `video_list` WHERE `url` = :url",array("url"=>$_GET['q']));
 @$request_text=$data[0]["path"];
 if (substr($request_text, -1)=="/") {
   $request_text=substr($request_text, 0, -1);
