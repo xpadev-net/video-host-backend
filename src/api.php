@@ -17,6 +17,10 @@ if($_GET["q"]=="img"){
 		exit;
 	}
 	header("Content-type: image/png");
+	if (file_exists(IMG_DIR.$_GET["src"].".png")) {
+		echo file_get_contents(IMG_DIR.$_GET["src"].".png");
+		exit;
+	}
     if (empty($img)||$img[0]["img"]==null) {
         echo file_get_contents(__DIR__.'/../assets/noimage.png');
         exit;
