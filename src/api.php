@@ -44,9 +44,6 @@ if ($_GET['q']=="recentupdate") {
 	$result=$pdo->execute("SELECT DISTINCT `title` FROM `video_list` WHERE `title` LIKE :query order by `title` asc limit 5",array("query"=>$query));
 	echo json_encode($result);
 	exit;
-}elseif($_GET["q"]=="backupimg"){
-	header("Content-type: image/png");
-	echo file_get_contents('/dataraid/data/backup.php');
 }elseif($_GET["q"]=="comments"){
 	header("Content-Type: application/json; charset=utf-8");
 	require_once(__DIR__.'/nicoSession.php');
