@@ -13,7 +13,8 @@ git clone https://github.com/xpadev-net/video-host-backend
 ### Config
 ```php
 <?php
-const DB_USER = 'hoge',
+const DB_HOST = 'localhost',
+    DB_USER = 'hoge',
     DB_PASSWORD = 'hoge',
     DB_PORT = '3306',
     DB_NAME = 'video-host',

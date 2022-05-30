@@ -4,7 +4,7 @@ class PDOSQL
 {
 	public $pdo;
 	public function __construct() {
-		$dbhost = "mysql:host=localhost;dbname=".DB_NAME.";port=".DB_PORT.";charset=utf8mb4";
+		$dbhost = "mysql:host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT.";charset=utf8mb4";
 
 		try {
 			$pdo = new PDO($dbhost,DB_USER,DB_PASSWORD,array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
