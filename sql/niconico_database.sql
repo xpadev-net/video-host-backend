@@ -1,0 +1,31 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION = @@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+CREATE TABLE `niconico_database`
+(
+    `id`            int(11)     NOT NULL,
+    `baseurl`       varchar(64) NOT NULL,
+    `targeturl`     varchar(64)          DEFAULT NULL,
+    `targetoffset`  int(11)     NOT NULL DEFAULT 0,
+    `targetdurl`    varchar(64)          DEFAULT NULL,
+    `targetdoffset` int(11)     NOT NULL DEFAULT 0
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+
+ALTER TABLE `niconico_database`
+    ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `niconico_database`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION */;
